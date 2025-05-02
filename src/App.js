@@ -155,7 +155,12 @@ export default function App() {
             <Sidenav
               color={sidenavColor}
               brand={(transparentSidenav && !darkMode) || whiteSidenav ? brandDark : brandWhite}
-              brandName={"Rocha Macias:\nComercializadora"}
+              brandName={
+                <>
+                  Rocha Macias: <br />
+                  Comercializadora
+                </>
+              }
               routes={routes}
               onMouseEnter={handleOnMouseEnter}
               onMouseLeave={handleOnMouseLeave}
@@ -179,7 +184,12 @@ export default function App() {
           <Sidenav
             color={sidenavColor}
             brand={(transparentSidenav && !darkMode) || whiteSidenav ? brandDark : brandWhite}
-            brandName={"Rocha Macias:\nComercializadora"}
+            brandName={
+              <>
+                Rocha Macias: <br />
+                Comercializadora
+              </>
+            }
             routes={routes}
             onMouseEnter={handleOnMouseEnter}
             onMouseLeave={handleOnMouseLeave}
