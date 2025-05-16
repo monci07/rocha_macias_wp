@@ -26,6 +26,7 @@ import Footer from "examples/Footer";
 import ReportsBarChart from "examples/Charts/BarCharts/ReportsBarChart";
 import ReportsLineChart from "examples/Charts/LineCharts/ReportsLineChart";
 import ComplexStatisticsCard from "examples/Cards/StatisticsCards/ComplexStatisticsCard";
+import DefaultProjectCard from "examples/Cards/ProjectCards/DefaultProjectCard";
 
 // Data
 import reportsBarChartData from "layouts/dashboard/data/reportsBarChartData";
@@ -35,6 +36,14 @@ import reportsLineChartData from "layouts/dashboard/data/reportsLineChartData";
 import Projects from "layouts/dashboard/components/Projects";
 import OrdersOverview from "layouts/dashboard/components/OrdersOverview";
 
+// images
+import varilla from "assets/images/varilla.jpg";
+import cemento from "assets/images/cemento.jpg";
+import rack from "assets/images/Rack.jpg";
+import caja_resma from "assets/images/Caja_resma.jpg";
+import pilas from "assets/images/caja_pilas.jpg";
+import clips from "assets/images/clips.jpg";
+
 function Dashboard() {
   const { sales, tasks } = reportsLineChartData;
 
@@ -42,115 +51,123 @@ function Dashboard() {
     <DashboardLayout>
       <DashboardNavbar />
       <MDBox py={3}>
-        <Grid container spacing={3}>
-          <Grid item xs={12} md={6} lg={3}>
-            <MDBox mb={1.5}>
-              <ComplexStatisticsCard
-                color="dark"
-                icon="weekend"
-                title="Bookings"
-                count={281}
-                percentage={{
-                  color: "success",
-                  amount: "+55%",
-                  label: "than lask week",
-                }}
-              />
-            </MDBox>
-          </Grid>
-          <Grid item xs={12} md={6} lg={3}>
-            <MDBox mb={1.5}>
-              <ComplexStatisticsCard
-                icon="leaderboard"
-                title="Today's Users"
-                count="2,300"
-                percentage={{
-                  color: "success",
-                  amount: "+3%",
-                  label: "than last month",
-                }}
-              />
-            </MDBox>
-          </Grid>
-          <Grid item xs={12} md={6} lg={3}>
-            <MDBox mb={1.5}>
-              <ComplexStatisticsCard
-                color="success"
-                icon="store"
-                title="Revenue"
-                count="34k"
-                percentage={{
-                  color: "success",
-                  amount: "+1%",
-                  label: "than yesterday",
-                }}
-              />
-            </MDBox>
-          </Grid>
-          <Grid item xs={12} md={6} lg={3}>
-            <MDBox mb={1.5}>
-              <ComplexStatisticsCard
-                color="primary"
-                icon="person_add"
-                title="Followers"
-                count="+91"
-                percentage={{
-                  color: "success",
-                  amount: "",
-                  label: "Just updated",
-                }}
-              />
-            </MDBox>
-          </Grid>
-        </Grid>
         <MDBox mt={4.5}>
+          <h1>Ultimos productos</h1>
           <Grid container spacing={3}>
             <Grid item xs={12} md={6} lg={4}>
               <MDBox mb={3}>
-                <ReportsBarChart
-                  color="info"
-                  title="website views"
-                  description="Last Campaign Performance"
-                  date="campaign sent 2 days ago"
-                  chart={reportsBarChartData}
+                <DefaultProjectCard
+                  image={varilla}
+                  label="Construcción"
+                  title="varilla"
+                  description="Emepezamos a manejar de 30 pies."
+                  action={{
+                    type: "internal",
+                    route: "/pages/profile/profile-overview",
+                    color: "info",
+                    label: "Agrgar al carrito",
+                  }}
+                  authors={[]}
+                  /*   { image: team1, name: "Elena Morison" },//   { image: team2, name: "Ryan Milly" },//   { image: team3, name: "Nick Daniel" },//   { image: team4, name: "Peterson" },*/
                 />
               </MDBox>
             </Grid>
             <Grid item xs={12} md={6} lg={4}>
               <MDBox mb={3}>
-                <ReportsLineChart
-                  color="success"
-                  title="daily sales"
-                  description={
-                    <>
-                      (<strong>+15%</strong>) increase in today sales.
-                    </>
-                  }
-                  date="updated 4 min ago"
-                  chart={sales}
+                <DefaultProjectCard
+                  image={cemento}
+                  label="Construcción"
+                  title="Cemento Cemex"
+                  description="Contamos con bolsas de 15 y 20 kilos."
+                  action={{
+                    type: "internal",
+                    route: "/pages/profile/profile-overview",
+                    color: "info",
+                    label: "Agrgar al carrito",
+                  }}
+                  authors={[]}
+                  /*   { image: team1, name: "Elena Morison" },//   { image: team2, name: "Ryan Milly" },//   { image: team3, name: "Nick Daniel" },//   { image: team4, name: "Peterson" },*/
                 />
               </MDBox>
             </Grid>
             <Grid item xs={12} md={6} lg={4}>
               <MDBox mb={3}>
-                <ReportsLineChart
-                  color="dark"
-                  title="completed tasks"
-                  description="Last Campaign Performance"
-                  date="just updated"
-                  chart={tasks}
+                <DefaultProjectCard
+                  image={rack}
+                  label="Informatica"
+                  title="Rack de procesadores"
+                  description="Estos nuevos racks son de 10 pies y abarca hasta 30 pcs."
+                  action={{
+                    type: "internal",
+                    route: "/pages/profile/profile-overview",
+                    color: "info",
+                    label: "Agrgar al carrito",
+                  }}
+                  authors={[]}
+                  /*   { image: team1, name: "Elena Morison" },//   { image: team2, name: "Ryan Milly" },//   { image: team3, name: "Nick Daniel" },//   { image: team4, name: "Peterson" },*/
                 />
               </MDBox>
             </Grid>
           </Grid>
         </MDBox>
-        <MDBox>
+      </MDBox>
+      <MDBox py={3}>
+        <MDBox mt={4.5}>
+          <h1>Ultimos articulos para oficina</h1>
           <Grid container spacing={3}>
-            <Grid item xs={12} md={6} lg={8}>
-              <Projects />
+            <Grid item xs={12} md={6} lg={4}>
+              <MDBox mb={3}>
+                <DefaultProjectCard
+                  image={caja_resma}
+                  label="Oficina"
+                  title="Resma de hojas"
+                  description="Manejamos cajas de 10, 15 y 20 paquetes."
+                  action={{
+                    type: "internal",
+                    route: "/pages/profile/profile-overview",
+                    color: "info",
+                    label: "Agrgar al carrito",
+                  }}
+                  authors={[]}
+                  /*   { image: team1, name: "Elena Morison" },//   { image: team2, name: "Ryan Milly" },//   { image: team3, name: "Nick Daniel" },//   { image: team4, name: "Peterson" },*/
+                />
+              </MDBox>
             </Grid>
             <Grid item xs={12} md={6} lg={4}>
-              <OrdersOverview />
+              <MDBox mb={3}>
+                <DefaultProjectCard
+                  image={pilas}
+                  label="Oficina"
+                  title="Paquete de pilas"
+                  description="Paquetes de 30 pilas AA o AAA."
+                  action={{
+                    type: "internal",
+                    route: "/pages/profile/profile-overview",
+                    color: "info",
+                    label: "Agrgar al carrito",
+                  }}
+                  authors={[]}
+                  /*   { image: team1, name: "Elena Morison" },//   { image: team2, name: "Ryan Milly" },//   { image: team3, name: "Nick Daniel" },//   { image: team4, name: "Peterson" },*/
+                />
+              </MDBox>
+            </Grid>
+            <Grid item xs={12} md={6} lg={4}>
+              <MDBox mb={3}>
+                <DefaultProjectCard
+                  image={clips}
+                  label="Oficina"
+                  title="Clips"
+                  description="Cajas de 20 unidades de clips."
+                  action={{
+                    type: "internal",
+                    route: "/pages/profile/profile-overview",
+                    color: "info",
+                    label: "Agrgar al carrito",
+                  }}
+                  authors={[]}
+                  /*   { image: team1, name: "Elena Morison" },//   { image: team2, name: "Ryan Milly" },//   { image: team3, name: "Nick Daniel" },//   { image: team4, name: "Peterson" },*/
+                />
+              </MDBox>
             </Grid>
           </Grid>
         </MDBox>
